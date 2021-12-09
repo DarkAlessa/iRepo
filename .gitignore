@@ -1,0 +1,4 @@
+/.vscode
+/Code/Cpp/**/build
+/Code/Cpp/**/.vscode
+**/desktop.ini
