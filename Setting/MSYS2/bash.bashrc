@@ -1,3 +1,6 @@
+# by Nuke 
+# update : 02-20-2022
+
 # To the extent possible under law, the author(s) have dedicated all 
 # copyright and related and neighboring rights to this software to the 
 # public domain worldwide. This software is distributed without any warranty. 
@@ -8,8 +11,8 @@
 # /etc/bash.bashrc: executed by bash(1) for interactive shells.
 
 # Git Prompt
-source ~/git-completion.bash
-source ~/git-prompt.sh
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 
 # System-wide bashrc file
 
@@ -56,10 +59,10 @@ unset _warning
 # if we have the "High Mandatory Level" group, it means we're elevated
 if [[ -n "$(command -v getent)" ]] && id -G | grep -q "$(getent -w group 'S-1-16-12288' | cut -d: -f2)"
   then _ps1_symbol='\[\e[1m\]\#\[\e[0m\]'
-  else _ps1_symbol='\[\e[38;2;0;255;0;48;2;70;70;70m\] \$ \[\e[0m\]\[\e[38;2;70;70;70m\]\[\e[0m\]'
+  else _ps1_symbol='\[\e[38;2;255;255;255;48;2;70;70;70m\] \$ \[\e[0m\]\[\e[38;2;70;70;70m\]\[\e[0m\]'
 fi
 [[ $(declare -p PS1 2>/dev/null | cut -c 1-11) = 'declare -x ' ]] || \
-  export PS1='\[\e]0;\w\a\]\[\e[38;2;50;50;50;48;2;255;36;20m\] alice\[\e[38;2;255;255;255;48;2;255;36;20m\]  \[\e[0m\]\[\e[38;2;50;50;50;48;2;255;36;20m\]$MSYSTEM \[\e[0m\]\[\e[38;2;255;36;20;48;2;255;176;50m\]\[\e[0m\]\[\e[38;2;50;50;50;48;2;255;176;50m\] \W \[\e[0m\]\[\e[38;2;255;176;50;48;2;70;70;70m\]\[\e[0m\]$(__git_ps1 "\[\e[38;2;0;255;0;48;2;70;70;70m\] %s \[\e[0m\]\[\e[38;2;0;0;0;48;2;70;70;70m\] \[\e[0m\]")'"${_ps1_symbol}"' '
+  export PS1='\[\e]0;\w\a\]\[\e[38;2;255;255;255;48;2;70;70;70m\] alice\[\e[38;2;255;255;255;48;2;70;70;70m\]  \[\e[0m\]\[\e[38;2;255;255;255;48;2;70;70;70m\]$MSYSTEM \[\e[0m\]\[\e[38;2;0;0;0;48;2;70;70;70m\]\[\e[0m\]\[\e[38;2;250;250;250;48;2;70;70;70m\] \W \[\e[0m\]\[\e[38;2;0;0;0;48;2;70;70;70m\]\[\e[0m\]$(__git_ps1 "\[\e[38;2;0;255;0;48;2;70;70;70m\] %s \[\e[0m\]\[\e[38;2;0;0;0;48;2;70;70;70m\] \[\e[0m\]")'"${_ps1_symbol}"' '
 unset _ps1_symbol
 
     alias pacman="pacman --color=auto"
